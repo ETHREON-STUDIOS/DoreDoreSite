@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DoreDoreWeb/1.0.0": {
+        "runtime": {
+          "DoreDoreWeb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DoreDoreWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

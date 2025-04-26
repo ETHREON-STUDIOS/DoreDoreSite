@@ -1,8 +1,83 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section: Slider + Search Bar -->
+<div class="container-fluid p-0">
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" style="height: 545px; overflow: hidden;">
+            <div class="carousel-item active position-relative h-100">
+                <img src="https://picsum.photos/id/1018/1920/450" class="d-block w-100 h-100 object-fit-cover" alt="Slider Image 1">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                    <h1>Öne Çıkan Film 1</h1>
+                    <a href="#" class="btn btn-warning mt-3">Hemen İzle</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative h-100">
+                <img src="https://picsum.photos/id/1015/1920/450" class="d-block w-100 h-100 object-fit-cover" alt="Slider Image 2">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                    <h1>Öne Çıkan Film 2</h1>
+                    <a href="#" class="btn btn-warning mt-3">Hemen İzle</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative h-100">
+                <img src="https://picsum.photos/id/1019/1920/450" class="d-block w-100 h-100 object-fit-cover" alt="Slider Image 3">
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                    <h1>Öne Çıkan Film 3</h1>
+                    <a href="#" class="btn btn-warning mt-3">Hemen İzle</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Search Bar hemen slider'ın altında -->
+    <div class="container mt-4">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Film veya dizi ara...">
+            <button class="btn btn-warning" type="button">Ara</button>
+        </div>
+    </div>
+</div>
+
+<!-- Kategoriler -->
+<div class="container text-center mt-5">
+    <h2>Kategoriler</h2>
+    <div class="d-flex justify-content-center flex-wrap mt-3">
+        <button class="btn btn-outline-warning m-2">Aksiyon</button>
+        <button class="btn btn-outline-warning m-2">Komedi</button>
+        <button class="btn btn-outline-warning m-2">Dram</button>
+        <button class="btn btn-outline-warning m-2">Korku</button>
+        <button class="btn btn-outline-warning m-2">Bilim Kurgu</button>
+    </div>
+</div>
+
+<!-- Önerilen Filmler -->
+<div class="container mt-5">
+    <h2>Önerilen Filmler</h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card movie-card">
+                <img src="https://picsum.photos/id/1025/300/400" class="card-img-top" alt="Film 1">
+                <div class="card-body">
+                    <h5 class="card-title">Film 1</h5>
+                    <a href="#" class="btn btn-warning">İzle</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card movie-card">
+                <img src="https://picsum.photos/id/1020/300/400" class="card-img-top" alt="Film 2">
+                <div class="card-body">
+                    <h5 class="card-title">Film 2</h5>
+                    <a href="#" class="btn btn-warning">İzle</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
