@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DoreDoreWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd2ba01e94a7b80fd2e055d19bfda23fae8bc390")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a305431218ba5d322fde4be5554d66a0687c479a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DoreDoreWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DoreDoreWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
