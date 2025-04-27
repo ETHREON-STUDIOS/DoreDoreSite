@@ -1,4 +1,4 @@
-﻿namespace DoreDoreWeb.Models.ViewModels
+﻿namespace DoreDoreWeb.Models.ViewsModel
 {
     public class RegisterViewModel
     {

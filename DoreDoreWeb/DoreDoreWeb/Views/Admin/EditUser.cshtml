@@ -2,170 +2,155 @@
 
 @{
     ViewData["Title"] = "Kullanıcı Düzenle";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    ViewData["ShowNavbar"] = false;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";  // Admin paneli layout'unu kullanıyoruz.
 }
 
-<h2>Kullanıcıyı Düzenle</h2>
+<h2 class="text-center text-white my-4">Kullanıcıyı Düzenle</h2>
 
-<form id="editUserForm" asp-action="EditUser" method="post">
+<form id="editUserForm" asp-action="EditUser" method="post" enctype="multipart/form-data" class="container bg-dark p-4 rounded">
     <input type="hidden" asp-for="Id" id="userId" />
 
-    <div class="form-group" id="userNameGroup">
-        <label for="userName">Kullanıcı Adı</label>
-        <input asp-for="UserName" class="form-control" id="userName" />
+    <!-- Kullanıcı Adı -->
+    <div class="form-group">
+        <label for="userName" class="text-white">Kullanıcı Adı</label>
+        <input asp-for="UserName" class="form-control bg-secondary text-white" id="userName" placeholder="Kullanıcı adı girin" />
     </div>
 
-    <div class="form-group" id="userEmailGroup">
-        <label for="userEmail">Email</label>
-        <input asp-for="UserEposta" class="form-control" id="userEmail" />
+    <!-- Email -->
+    <div class="form-group">
+        <label for="userEmail" class="text-white">Email</label>
+        <input asp-for="UserEposta" class="form-control bg-secondary text-white" id="userEmail" placeholder="Email adresini girin" />
     </div>
 
-    <div class="form-group" id="userPasswordGroup">
-        <label for="userPassword">Şifre</label>
-        <input asp-for="UserPassword" type="password" class="form-control" id="userPassword" />
+    <!-- Şifre -->
+    <div class="form-group">
+        <label for="userPassword" class="text-white">Şifre</label>
+        <input asp-for="UserPassword" type="password" class="form-control bg-secondary text-white" id="userPassword" placeholder="Şifre girin" />
     </div>
 
-    <div class="form-group" id="userAdminGroup">
-        <label for="userAdmin">Admin mi?</label>
-        <select asp-for="UserLv" class="form-control" id="userAdmin">
+    <!-- Admin Durumu -->
+    <div class="form-group">
+        <label for="userAdmin" class="text-white">Admin mi?</label>
+        <select asp-for="UserLv" class="form-control bg-secondary text-white" id="userAdmin">
             <option value="true" selected="@(Model.UserLv == true)">Evet</option>
             <option value="false" selected="@(Model.UserLv == false)">Hayır</option>
         </select>
     </div>
 
-    <div class="form-group" id="birthDateGroup">
-        <label for="birthDate">Doğum Tarihi</label>
-        <input asp-for="BirthDate" type="date" class="form-control" id="birthDate" />
+    <!-- Doğum Tarihi -->
+    <div class="form-group">
+        <label for="birthDate" class="text-white">Doğum Tarihi</label>
+        <input asp-for="BirthDate" type="date" class="form-control bg-secondary text-white" id="birthDate" />
     </div>
 
-    <div class="form-group" id="genderGroup">
-        <label for="gender">Cinsiyet</label>
-        <select asp-for="Gender" class="form-control" id="gender">
+    <!-- Cinsiyet -->
+    <div class="form-group">
+        <label for="gender" class="text-white">Cinsiyet</label>
+        <select asp-for="Gender" class="form-control bg-secondary text-white" id="gender">
             <option value="true" selected="@(Model.Gender == true)">Erkek</option>
             <option value="false" selected="@(Model.Gender == false)">Kadın</option>
         </select>
     </div>
 
-    <div class="form-group" id="profilePictureGroup">
-        <label for="profilePicture">Profil Fotoğrafı (URL)</label>
-        <input asp-for="ProfilePicture" class="form-control" id="profilePicture" />
+    <!-- Eski Profil Fotoğrafını Gösterme -->
+    <div class="form-group">
+        <label for="profilePicture" class="text-white">Mevcut Profil Fotoğrafı</label>
+        @if (!string.IsNullOrEmpty(Model.ProfilePicture))
+        {
+            <div>
+                <img src="@Url.Content(Model.ProfilePicture)" alt="Profil Fotoğrafı" class="img-fluid" style="max-width: 200px; max-height: 200px; border-radius: 10px;" />
+                <p class="text-muted">@Model.ProfilePicture</p>  <!-- Eski fotoğrafın yolunu göstermek -->
+            </div>
+        }
+        <label for="newProfilePicture" class="text-white">Yeni Profil Fotoğrafı (Opsiyonel)</label>
+        <input asp-for="ProfilePicture" type="file" class="form-control-file" id="newProfilePicture" />
     </div>
 
-    <button type="submit" class="btn btn-success mt-3" id="submitBtn">Kaydet</button>
-    <a class="btn btn-secondary mt-3" href="@Url.Action("Users", "Admin")" id="cancelBtn">İptal</a>
+    <!-- Butonlar -->
+    <div class="form-group text-center mt-4">
+        <button type="submit" class="btn btn-success btn-lg">Kaydet</button>
+        <a asp-action="Users" class="btn btn-secondary btn-lg ml-2">İptal</a>
+    </div>
 </form>
 
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
 <style>
-    /* Genel Stil Ayarları */
+    /* Karanlık tema genel stilleri */
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        background-color: #212121;
+        color: #e0e0e0;
     }
 
-    /* Başlık */
     h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: #333;
-        text-align: center;
+        font-size: 2rem;
     }
 
-    /* Form Stili */
-    #editUserForm {
-        background-color: white;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
-        margin: 0 auto;
+    .form-control {
+        font-size: 16px;
+        border: 1px solid #333;
     }
 
-    /* Form Grup */
+    .form-control:focus {
+        background-color: #444;
+        border-color: #76b900;
+        color: #fff;
+    }
+
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
     }
 
-    /* Form Etiketleri */
     label {
-        font-size: 16px;
         font-weight: bold;
-        color: #333;
     }
 
-    /* Form Girdi Alanları */
-    #userName, #userEmail, #userPassword, #birthDate, #profilePicture, #gender {
-        padding: 12px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        width: 100%;
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    /* Girdi Alanları Focus */
-    #userName:focus, #userEmail:focus, #userPassword:focus, #birthDate:focus, #profilePicture:focus, #gender:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-    /* Butonlar */
-    button#submitBtn {
-        padding: 12px 20px;
+    .btn {
         font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        width: 100%;
-        margin-top: 10px;
+        padding: 10px 20px;
     }
 
-    button#submitBtn.btn-success {
-        background-color: #28a745;
-        border: none;
+    .btn-success {
+        background-color: #76b900;
+        border-color: #76b900;
     }
 
-    button#submitBtn.btn-success:hover {
-        background-color: #218838;
+    .btn-success:hover {
+        background-color: #66a800;
+        border-color: #66a800;
     }
 
-    /* İptal Butonu */
-    a#cancelBtn {
-        background-color: #6c757d;
-        color: white;
-        padding: 12px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        display: inline-block;
-        width: 100%;
-        margin-top: 10px;
+    .btn-secondary {
+        background-color: #555;
+        border-color: #555;
     }
 
-    a#cancelBtn:hover {
-        background-color: #5a6268;
+    .btn-secondary:hover {
+        background-color: #444;
+        border-color: #444;
     }
 
-    /* Sayfa Ortasında Konumlandırma */
-    form {
-        margin: 0 auto;
+    .img-fluid {
+        border-radius: 10px;
     }
 
-    /* Responsive Düzenlemeler */
-    @@media (max-width: 576px) {
-        #editUserForm {
-            padding: 20px;
-            max-width: 100%;
+    .text-muted {
+        font-size: 14px;
+    }
+
+    /* Responsive tasarım */
+    @@media (max-width: 768px) {
+        .form-group {
+            margin-bottom: 1rem;
         }
 
-        h2 {
-            font-size: 24px;
+        .btn {
+            width: 100%;
+            font-size: 18px;
         }
     }
 </style>

@@ -34,15 +34,9 @@
                     background-color: #17a2b8;
                 }
 
-        /* Content */
+        /* Sayfa İçeriği */
         .content {
             padding: 20px;
-        }
-
-        /* Optional: Arka plan görseli eklemek için */
-        .container-fluid {
-            padding-left: 0;
-            padding-right: 0;
         }
 
         /* Sayfa içerik kısmı */
@@ -52,47 +46,39 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
-
-        /* Eğer navbar'ın sadece bazı sayfalarda görünmesini istiyorsanız */
-        .navbar-hidden {
-            display: none;
-        }
     </style>
 </head>
 <body>
 
     <!-- Navbar (Yatay Menu) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="@Url.Action("Users", "Admin")">Admin Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbar" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="@Url.Action("Users", "Admin")">Admin Paneli</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbar" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="adminNavbar">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Users", "Admin")">Kullanıcılar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Movies", "Admin")">Filmler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Categories", "Admin")">Kategoriler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Comments", "Admin")">Yorumlar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" href="@Url.Action("Logout", "Login")">Çıkış Yap</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse" id="adminNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Users", "Admin")">Kullanıcılar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Films", "Admin")">Filmler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Categories", "Admin")">Kategoriler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Comments", "Admin")">Yorumlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="@Url.Action("Logout", "Login")">Çıkış Yap</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-
+        </div>
+    </nav>
 
     <!-- Content Area -->
     <div class="content">
@@ -101,3 +87,4 @@
 
 </body>
 </html>
+@RenderSection("Scripts", required: false)

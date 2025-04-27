@@ -26,8 +26,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Muhmm\OneDrive\Belgeler\GitHub\DoreDoreSite\DoreDoreWeb\DoreDoreWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Muhmm/OneDrive/Belgeler/GitHub/DoreDoreSite/DoreDoreWeb/DoreDoreWeb/Views/Admin/AddFilm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkRmlsbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhmm/OneDrive/Belgeler/GitHub/DoreDoreSite/DoreDoreWeb/DoreDoreWeb/Views/Admin/EditFilm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEZpbG0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Muhmm/OneDrive/Belgeler/GitHub/DoreDoreSite/DoreDoreWeb/DoreDoreWeb/Views/Admin/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Muhmm/OneDrive/Belgeler/GitHub/DoreDoreSite/DoreDoreWeb/DoreDoreWeb/Views/Admin/Films.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmlsbXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Muhmm/OneDrive/Belgeler/GitHub/DoreDoreSite/DoreDoreWeb/DoreDoreWeb/Views/Admin/Users.cshtml]

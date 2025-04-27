@@ -1,43 +1,131 @@
 ﻿@model DoreDoreWeb.Models.User
 
 @{
-    ViewData["Title"] = "Profilinizi Düzenleyin";
+    ViewData["Title"] = "EditProfile";
 }
 
-<h2>Profilinizi Düzenleyin</h2>
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
 
-<form asp-action="EditProfile" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="UserName">Kullanıcı Adı</label>
-        <input asp-for="UserName" class="form-control" />
-    </div>
+        h2 {
+            font-size: 32px;
+            color: #343a40;
+            font-weight: 600;
+            margin-top: 50px;
+            text-align: center;
+        }
 
-    <div class="form-group">
-        <label for="UserEposta">E-Posta</label>
-        <input asp-for="UserEposta" class="form-control" />
-    </div>
+        .form-group {
+            margin-bottom: 20px;
+        }
 
+        .form-group label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #495057;
+            display: block;
+            margin-bottom: 8px;
+        }
 
-    <div class="form-group">
-        <label for="BirthDate">Doğum Tarihi</label>
-        <input asp-for="BirthDate" type="date" class="form-control" />
-    </div>
+        .form-control {
+            font-size: 15px;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
 
-    <div class="form-group">
-        <label for="Gender">Cinsiyet</label>
-        <select asp-for="Gender" class="form-control">
-            <option value="true">Erkek</option>
-            <option value="false">Kadın</option>
-        </select>
-    </div>
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
 
-    <div class="form-group">
-        <label for="ProfilePicture">Profil Fotoğrafı</label>
-        <input type="file" name="ProfilePicture" class="form-control" />
-    </div>
+        .btn-success {
+            font-size: 18px;
+            padding: 14px;
+            border-radius: 8px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    <!-- Gizli alanla ID'yi gönderiyoruz -->
-    <input type="hidden" asp-for="Id" />
+        .btn-success:hover {
+            background-color: #218838;
+        }
 
-    <button type="submit" class="btn btn-primary">Kaydet</button>
-</form>
+        /* Formu ortalamak için */
+        form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            margin: 50px auto;
+        }
+
+        button.w-100 {
+            width: 100%;
+        }
+
+        /* Responsive Tasarım */
+        @@media (max-width: 576px) {
+            form {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center mb-5">Profilinizi Düzenleyin</h2>
+
+    <form asp-action="EditProfile" method="post" enctype="multipart/form-data">
+        <div class="form-group mb-4">
+            <label for="UserName" class="form-label">Kullanıcı Adı</label>
+            <input asp-for="UserName" class="form-control" placeholder="Kullanıcı adınızı girin" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="UserEposta" class="form-label">E-Posta</label>
+            <input asp-for="UserEposta" type="email" class="form-control" placeholder="E-posta adresinizi girin" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="BirthDate" class="form-label">Doğum Tarihi</label>
+            <input asp-for="BirthDate" type="date" class="form-control" />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Gender" class="form-label">Cinsiyet</label>
+            <select asp-for="Gender" class="form-control">
+                <option value="true">Erkek</option>
+                <option value="false">Kadın</option>
+            </select>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="ProfilePicture" class="form-label">Profil Fotoğrafı</label>
+            <input type="file" name="ProfilePicture" class="form-control" />
+        </div>
+
+        <!-- Gizli alanla ID'yi gönderiyoruz -->
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" class="btn btn-success w-100 mt-4">Kaydet</button>
+    </form>
+</body>

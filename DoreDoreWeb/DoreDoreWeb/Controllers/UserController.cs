@@ -2,6 +2,7 @@
 using DoreDoreWeb.Models;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoreDoreWeb.Controllers
 {
@@ -51,36 +52,49 @@ namespace DoreDoreWeb.Controllers
         // Profil düzenlemesi işlemi
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditProfile(User updatedUser)
+        public async Task<IActionResult> EditProfile(User updatedUser, IFormFile ProfilePicture)
         {
             if (ModelState.IsValid)
             {
-                var user = _context.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == updatedUser.Id);
 
-                if (user.Id != null)
+                if (user != null)
                 {
-                    // Kullanıcıyı güncelle
+                    // Kullanıcı bilgilerini güncelle
                     user.UserName = updatedUser.UserName;
                     user.UserEposta = updatedUser.UserEposta;
                     user.BirthDate = updatedUser.BirthDate;
                     user.Gender = updatedUser.Gender;
-                    user.ProfilePicture = updatedUser.ProfilePicture;
 
-                    // Değişiklikleri kaydet
-                    _context.SaveChanges();
+                    // Profil fotoğrafı var mı kontrol et
+                    if (ProfilePicture != null)
+                    {
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", ProfilePicture.FileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await ProfilePicture.CopyToAsync(stream);
+                        }
 
+                        // Veritabanına fotoğraf yolunu kaydet
+                        user.ProfilePicture = "/images/" + ProfilePicture.FileName;
+                    }
+
+                    await _context.SaveChangesAsync();
+                    
                     // Profil sayfasına yönlendir
                     return RedirectToAction(nameof(Profile));
                 }
                 else
                 {
-                    // Kullanıcı bulunamadı, hata mesajı
+                    // Kullanıcı bulunamadı
                     return NotFound();
                 }
             }
 
-            return View(updatedUser); // Geçerli olmayan model durumu için tekrar formu render et
+            // Geçersiz model durumu, formu tekrar render et
+            return View(updatedUser);
         }
+
 
         // Kullanıcının ID'sini Session'dan almayı sağlayacak metot
         private IActionResult GetUserIdFromSession()

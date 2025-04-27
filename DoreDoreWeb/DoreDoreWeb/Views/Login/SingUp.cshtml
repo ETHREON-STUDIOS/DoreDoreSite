@@ -1,52 +1,179 @@
-﻿@model DoreDoreWeb.Models.ViewModels.RegisterViewModel
+﻿    @model DoreDoreWeb.Models.ViewsModel.Users
+    @{
+        ViewData["Title"] = "Kayıt Ol";
+        ViewData["ShowNavbar"] = false;
+    }
 
-@{
-    ViewData["Title"] = "Kayıt Ol";
-    ViewData["ShowNavbar"] = false;
-}
+    <style>
+    body {
+        background-color: #121212; /* Tam karanlık arka plan */
+        color: #e0e0e0; /* Açık gri yazılar */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
 
-<h2 class="text-center mb-4">Kayıt Ol</h2>
+    .container {
+        width: 100%;
+        max-width: 500px;
+        padding: 2rem;
+        background-color: #1e1e1e; /* Form için koyu gri arka plan */
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        border: 1px solid #333; /* Koyu gri sınır */
+    }
 
-<div class="container">
-<form asp-action="SingUp" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label>Kullanıcı Adı</label>
-        <input asp-for="UserName" class="form-control" />
+    h2 {
+        color: #f0f0f0; /* Başlık için açık renk */
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        color: #cfcfcf; /* Etiketler için yumuşak gri */
+        font-size: 1rem;
+    }
+
+    .form-control {
+        background-color: #2a2a2a; /* Daha koyu gri form inputları */
+        border: 1px solid #444; /* Dış çerçeve daha belirgin */
+        color: #fff; /* Yazı rengi beyaz */
+        padding: 0.75rem;
+        border-radius: 6px;
+        transition: all 0.3s ease; /* Geçiş efekti */
+    }
+
+        .form-control:focus {
+            background-color: #333; /* Fokus durumunda biraz daha açık gri */
+            color: #fff;
+            border-color: #00aaff; /* Mavi renk odaklanınca */
+            box-shadow: 0 0 5px #00aaff; /* Mavi odak efekti */
+        }
+
+    select.form-control {
+        background-color: #2a2a2a;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Buton için mavi tonları */
+        border-color: #007bff;
+        padding: 0.75rem 1.25rem;
+        font-size: 1.1rem;
+        border-radius: 6px;
+        width: 100%;
+        transition: background-color 0.3s, border-color 0.3s; /* Buton geçiş efekti */
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Hover için koyu mavi */
+            border-color: #004085;
+        }
+
+    .form-group input[type="file"] {
+        background-color: #333; /* Koyu gri input alanı */
+        color: #fff;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid #444;
+    }
+
+        .form-group input[type="file"]:focus {
+            border-color: #00aaff; /* Odaklandığında mavi */
+            box-shadow: 0 0 5px #00aaff; /* Mavi odak efekti */
+        }
+
+    .text-center a {
+        color: #00aaff; /* Bağlantılar için mavi */
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+        .text-center a:hover {
+            text-decoration: underline;
+            color: #80d6ff; /* Hover durumu için daha açık mavi */
+        }
+
+    .form-group input[type="file"] {
+        background-color: #333;
+        color: #fff;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: 1px solid #444;
+    }
+
+        .form-group input[type="file"]:focus {
+            border-color: #00aaff;
+            box-shadow: 0 0 5px #00aaff; /* Mavi odak efekti */
+        }
+
+    .form-control::placeholder {
+        color: #aaa; /* Placeholder rengi daha açık gri */
+    }
+
+    .container {
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    </style>
+
+<h2 style=" color:slateblue ;">Kayıt Ol</h2>
+
+    <div class="container">
+        <form asp-action="SingUp" method="post" enctype="multipart/form-data">
+        <div class="form-group" >
+                <label>Kullanıcı Adı</label>
+            <input asp-for="UserName" class="form-control" style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white;" />
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+            <input asp-for="UserEposta" class="form-control" style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white;" />
+
+
+
+            </div>
+
+            <div class="form-group">
+                <label>Şifre</label>
+            <input asp-for="UserPassword" type="password" class="form-control"  style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white;" />
+            </div>
+
+            <div class="form-group">
+                <label>Doğum Tarihi</label>
+            <input asp-for="BirthDate" type="date" class="form-control" style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white;" />
+            </div>
+
+            <div class="form-group">
+                <label>Cinsiyet</label>
+            <select asp-for="Gender" class="form-control" style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white;">
+                    <option value="true">Erkek</option>
+                    <option value="false">Kadın</option>
+                </select>
+            </div>
+
+            <!-- Profil fotoğrafı ekleme alanı -->
+            <div class="form-group">
+                <label>Profil Fotoğrafı</label>
+            <input type="file" name="ProfilePicture" class="form-control" style="background: linear-gradient(to right, #6a0dad, #4b4b4b); color: white; " />
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+        </form>
     </div>
 
-    <div class="form-group">
-        <label>Email</label>
-        <input asp-for="UserEposta" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Şifre</label>
-        <input asp-for="UserPassword" type="password" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Doğum Tarihi</label>
-        <input asp-for="BirthDate" type="date" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Cinsiyet</label>
-        <select asp-for="Gender" class="form-control">
-            <option value="true">Erkek</option>
-            <option value="false">Kadın</option>
-        </select>
-    </div>
-
-    <!-- Profil fotoğrafı ekleme alanı -->
-    <div class="form-group">
-        <label>Profil Fotoğrafı</label>
-        <input type="file" name="ProfilePicture" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
-</form>
-
-</div>
-
-<!-- Bootstrap CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />

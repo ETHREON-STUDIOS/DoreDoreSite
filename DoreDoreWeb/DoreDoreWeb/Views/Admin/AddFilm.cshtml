@@ -1,0 +1,154 @@
+﻿@model DoreDoreWeb.Models.Film
+
+@{
+    ViewData["Title"] = "Yeni Film Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ShowNavbar"] = false;
+}
+
+<h2 class="text-center mb-4">Yeni Film Ekle</h2>
+
+<form asp-action="AddFilm" method="post" enctype="multipart/form-data" class="p-4 bg-dark text-white rounded shadow-lg">
+    <div class="form-group mb-4">
+        <label for="FilmName">Film Adı</label>
+        <input asp-for="FilmName" id="FilmName" class="form-control" placeholder="Film adı girin" />
+        <span asp-validation-for="FilmName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="ReleaseDate">Çıkış Tarihi</label>
+        <input asp-for="ReleaseDate" type="date" id="ReleaseDate" class="form-control" />
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="FilmImdb">IMDb Puanı</label>
+        <input asp-for="FilmImdb" id="FilmImdb" class="form-control" placeholder="IMDb puanını girin" />
+        <span asp-validation-for="FilmImdb" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="FilmDescriptiyon">Açıklama</label>
+        <textarea asp-for="FilmDescriptiyon" id="FilmDescriptiyon" class="form-control" rows="4" placeholder="Film açıklamasını girin"></textarea>
+        <span asp-validation-for="FilmDescriptiyon" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="FilmDuratiyon">Film Süresi (dakika)</label>
+        <input asp-for="FilmDuratiyon" id="FilmDuratiyon" class="form-control" placeholder="Film süresi (dakika)" />
+        <span asp-validation-for="FilmDuratiyon" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="FilmImage">Film Afişi Yükle</label>
+        <input type="file" name="FilmImage" id="FilmImage" class="form-control-file" />
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="FilmDosya">Film Dosyası Yükle</label>
+        <input type="file" name="FilmDosya" id="FilmDosya" class="form-control-file" />
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-success btn-lg">Filmi Ekle</button>
+        <a asp-action="Films" class="btn btn-secondary btn-lg">İptal</a>
+    </div>
+</form>
+
+@section Scripts {
+    await Html.RenderPartialAsync("_ValidationScriptsPartial")
+}
+
+<style>
+    body {
+        background-color: #343a40;
+    }
+
+    h2 {
+        color: #ffffff;
+    }
+
+    .form-control {
+        background-color: #495057;
+        color: white;
+        border: 1px solid #6c757d;
+    }
+
+        .form-control:focus {
+            background-color: #6c757d;
+            color: white;
+            border-color: #28a745;
+        }
+
+    .form-group label {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .form-control-file {
+        background-color: #495057;
+        color: white;
+        border: 1px solid #6c757d;
+    }
+
+        .form-control-file:focus {
+            background-color: #6c757d;
+            color: white;
+            border-color: #28a745;
+        }
+
+    .bg-dark {
+        background-color: #2c2f36 !important;
+    }
+
+    .rounded {
+        border-radius: 8px;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .mt-4 {
+        margin-top: 1.5rem;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-between {
+        justify-content: space-between;
+    }
+</style>

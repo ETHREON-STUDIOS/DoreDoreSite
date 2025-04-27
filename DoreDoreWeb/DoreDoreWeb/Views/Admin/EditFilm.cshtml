@@ -1,0 +1,117 @@
+﻿@model DoreDoreWeb.Models.Film
+
+@{
+    ViewData["Title"] = "Film Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ShowNavbar"] = false;
+}
+
+<h2 class="text-center my-4">Film Düzenle</h2>
+
+<form asp-action="EditFilm" method="post" enctype="multipart/form-data" class="container">
+    <input type="hidden" asp-for="FilmId" />
+
+    <!-- Film Adı -->
+    <div class="form-group">
+        <label for="FilmName">Film Adı</label>
+        <input asp-for="FilmName" class="form-control" id="FilmName" placeholder="Film adı girin" />
+        <span asp-validation-for="FilmName" class="text-danger"></span>
+    </div>
+
+    <!-- Çıkış Tarihi -->
+    <div class="form-group">
+        <label for="ReleaseDate">Çıkış Tarihi</label>
+        <input asp-for="ReleaseDate" type="date" class="form-control" id="ReleaseDate" />
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+    </div>
+
+    <!-- IMDb Puanı -->
+    <div class="form-group">
+        <label for="FilmImdb">IMDb Puanı</label>
+        <input asp-for="FilmImdb" class="form-control" id="FilmImdb" placeholder="IMDb puanı girin" />
+        <span asp-validation-for="FilmImdb" class="text-danger"></span>
+    </div>
+
+    <!-- Açıklama -->
+    <div class="form-group">
+        <label for="FilmDescriptiyon">Açıklama</label>
+        <textarea asp-for="FilmDescriptiyon" class="form-control" id="FilmDescriptiyon" placeholder="Film açıklaması girin"></textarea>
+        <span asp-validation-for="FilmDescriptiyon" class="text-danger"></span>
+    </div>
+
+    <!-- Film Süresi -->
+    <div class="form-group">
+        <label for="FilmDuratiyon">Film Süresi (dakika)</label>
+        <input asp-for="FilmDuratiyon" class="form-control" id="FilmDuratiyon" placeholder="Film süresi girin" />
+        <span asp-validation-for="FilmDuratiyon" class="text-danger"></span>
+    </div>
+
+    <!-- Mevcut Film Afişi -->
+    <div class="form-group">
+        <label>Mevcut Film Afişi</label><br />
+        @if (!string.IsNullOrEmpty(Model.FilmImageDosyaYolu))
+        {
+            <img src="@Model.FilmImageDosyaYolu" alt="Film Afişi" class="img-fluid" style="max-height: 200px; border-radius: 8px;" />
+        }
+        <p class="mt-2 text-muted">Mevcut film afişini görmek için yukarıdaki alana bakın.</p>
+    </div>
+
+    <!-- Yeni Film Afişi Yükle -->
+    <div class="form-group">
+        <label for="FilmImage">Yeni Film Afişi Yükle</label>
+        <input type="file" name="FilmImage" class="form-control-file" id="FilmImage" />
+    </div>
+
+    <!-- Mevcut Film Dosyası -->
+    <div class="form-group">
+        <label>Mevcut Film Dosyası</label><br />
+        @if (!string.IsNullOrEmpty(Model.FilmDosyaYolu))
+        {
+            <a href="@Model.FilmDosyaYolu" target="_blank" class="btn btn-info btn-sm">Film Dosyasını Görüntüle</a>
+        }
+    </div>
+
+    <!-- Yeni Film Dosyası Yükle -->
+    <div class="form-group">
+        <label for="FilmDosya">Yeni Film Dosyası Yükle</label>
+        <input type="file" name="FilmDosya" class="form-control-file" id="FilmDosya" />
+    </div>
+
+    <!-- Butonlar -->
+    <div class="form-group text-center mt-4">
+        <button type="submit" class="btn btn-success btn-lg">Kaydet</button>
+        <a asp-action="Films" class="btn btn-secondary btn-lg ml-2">İptal</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
+
+    .img-fluid {
+        border-radius: 10px;
+    }
+
+    .text-muted {
+        font-size: 14px;
+    }
+</style>

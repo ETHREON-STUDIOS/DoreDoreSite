@@ -1,0 +1,97 @@
+﻿@model DoreDoreWeb.Models.ViewsModel.FilmListViewsModel
+
+@{
+    ViewData["Title"] = "Film Listesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ShowNavbar"] = false;
+}
+
+<h2>Film Listesi</h2>
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-end mb-3">
+        <a href="@Url.Action("AddFilm", "Admin")" class="btn btn-success btn-sm">Film Ekle</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Film Adı</th>
+                    <th>Çıkış Tarihi</th>
+                    <th>IMDB Puanı</th>
+                    <th>Açıklama</th>
+                    <th>Süre (dk)</th>
+                    <th>Film Dosyası</th>
+                    <th>Film Afişi</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var film in Model.Films)
+                {
+                    <tr>
+                        <td>@film.FilmId</td>
+                        <td>@film.FilmName</td>
+                        <td>@film.ReleaseDate?.ToString("dd/MM/yyyy")</td>
+                        <td>@film.FilmImdb</td>
+                        <td>@film.FilmDescriptiyon</td>
+                        <td>@film.FilmDuratiyon</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(film.FilmDosyaYolu))
+                            {
+                                <a href="@film.FilmDosyaYolu" target="_blank" class="btn btn-info btn-sm">İzle</a>
+                            }
+                            else
+                            {
+                                <span>Dosya Yok</span>
+                            }
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(film.FilmImageDosyaYolu))
+                            {
+                                <img src="@film.FilmImageDosyaYolu" alt="Film Afişi" width="80" height="100" />
+                            }
+                            else
+                            {
+                                <span>Afiş Yok</span>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="@Url.Action("EditFilm", "Admin", new { id = film.FilmId })">Düzenle</a>
+                            <a class="btn btn-danger btn-sm" href="@Url.Action("DeleteFilm", "Admin", new { id = film.FilmId })" onclick="return confirm('Bu filmi silmek istediğine emin misin?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-container">
+        @if (Model.TotalPages > 1)
+        {
+            for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <a href="@Url.Action("FilmListesi", "Admin", new { pageNumber = i })" class="btn btn-secondary btn-sm @((i == Model.CurrentPage) ? "active" : "")">@i</a>
+            }
+        }
+    </div>
+</div>
+
+<style>
+    /* Sayfa numaralandırma ve stil eklemeleri */
+    .pagination-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .pagination-container a {
+            margin: 0 5px;
+        }
+
+            .pagination-container a.active {
+                background-color: #007bff;
+                color: white;
+            }
+</style>
