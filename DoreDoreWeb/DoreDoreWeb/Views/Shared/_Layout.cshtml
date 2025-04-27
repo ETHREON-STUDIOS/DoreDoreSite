@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>@ViewData["Title"] - DoreDore</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DoreDoreWeb.styles.css" asp-append-version="true" />
@@ -41,6 +43,10 @@
                 background-color: #f5f5f5;
                 color: #000;
             }
+
+        .dropdown-menu {
+            min-width: 150px;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +54,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
             <div class="container d-flex align-items-center">
+
                 <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index" style="height: 80px;">
                     <img src="/Images/logo2.png" alt="DoreDore Logo" style="max-height: 100%; width: auto; object-fit: contain;" class="img-fluid" />
                 </a>
@@ -76,9 +83,29 @@
                         </li>
                     </ul>
 
-                    <div class="d-flex">
-                        <a class="btn btn-outline-light me-2" asp-controller="Account" asp-action="Login">Giriş Yap</a>
-                        <a class="btn btn-warning" asp-controller="Account" asp-action="Register">Kayıt Ol</a>
+                    <div class="d-flex align-items-center">
+                        @if (Context.Session.GetString("UserName") != null)
+                        {
+                            <!-- Kullanıcı giriş yaptıysa -->
+                            <div class="dropdown">
+                                <a href="#" class="d-flex align-items-center text-light text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="@Context.Session.GetString("ProfilePicture")" alt="Profil" width="40" height="40" class="rounded-circle me-2">
+                                    <span>@Context.Session.GetString("UserName")</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="profileDropdown">
+                                    <li><a class="dropdown-item" href="/User/Profile">Profilim</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" asp-controller="Login" asp-action="Logout">Çıkış Yap</a></li>
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Kullanıcı giriş yapmadıysa -->
+                            <a class="btn btn-outline-light me-2" asp-controller="Login" asp-action="Login">Giriş Yap</a>
+                            <a class="btn btn-warning" asp-controller="Login" asp-action="SingUp">Kayıt Ol</a>
+                        }
+
                     </div>
                 </div>
             </div>

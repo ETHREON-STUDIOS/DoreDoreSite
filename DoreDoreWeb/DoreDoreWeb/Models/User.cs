@@ -5,13 +5,13 @@ namespace DoreDoreWeb.Models;
 
 public partial class User
 {
-    public int UserId { get; set; }
+    public int Id { get; set; }
 
     public string? UserName { get; set; }
 
     public string? UserEposta { get; set; }
 
-    public string? UserPassaworld { get; set; }
+    public string? UserPassword { get; set; }
 
     public bool? UserLv { get; set; }
 
@@ -19,7 +19,7 @@ public partial class User
 
     public bool? Gender { get; set; }
 
-    public string? ProfilFoto { get; set; }
+    public string? ProfilePicture { get; set; }
 
     public virtual ICollection<CommentsUser> CommentsUsers { get; set; } = new List<CommentsUser>();
 }

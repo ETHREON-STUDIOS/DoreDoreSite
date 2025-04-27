@@ -1,0 +1,43 @@
+﻿@model DoreDoreWeb.Models.User
+
+@{
+    ViewData["Title"] = "Profilinizi Düzenleyin";
+}
+
+<h2>Profilinizi Düzenleyin</h2>
+
+<form asp-action="EditProfile" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="UserName">Kullanıcı Adı</label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="UserEposta">E-Posta</label>
+        <input asp-for="UserEposta" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label for="BirthDate">Doğum Tarihi</label>
+        <input asp-for="BirthDate" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Gender">Cinsiyet</label>
+        <select asp-for="Gender" class="form-control">
+            <option value="true">Erkek</option>
+            <option value="false">Kadın</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ProfilePicture">Profil Fotoğrafı</label>
+        <input type="file" name="ProfilePicture" class="form-control" />
+    </div>
+
+    <!-- Gizli alanla ID'yi gönderiyoruz -->
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

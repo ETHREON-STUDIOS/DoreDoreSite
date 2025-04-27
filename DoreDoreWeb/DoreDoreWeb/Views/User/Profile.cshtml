@@ -1,0 +1,34 @@
+﻿@model DoreDoreWeb.Models.User
+
+@{
+    ViewData["Title"] = "Profil";
+}
+
+<h1>Profiliniz</h1>
+
+<div>
+    <strong>Kullanıcı Adı:</strong> @Model.UserName
+</div>
+<div>
+    <strong>E-Posta:</strong> @Model.UserEposta
+</div>
+<div>
+    <strong>Doğum Tarihi:</strong> @Model.BirthDate?.ToString("dd/MM/yyyy")
+</div>
+<div>
+    <strong>Cinsiyet:</strong> @(Model.Gender == true ? "Erkek" : "Kadın")
+</div>
+<div>
+    <strong>Profil Fotoğrafı:</strong>
+    @if (!string.IsNullOrEmpty(Model.ProfilePicture))
+    {
+        <img src="@Model.ProfilePicture" alt="Profil Fotoğrafı" width="100" height="100" />
+    }
+    else
+    {
+        <p>Profil fotoğrafı eklenmemiş.</p>
+    }
+</div>
+<div>
+    <a href="@Url.Action("EditProfile")">Profilinizi Düzenle</a>
+</div>
