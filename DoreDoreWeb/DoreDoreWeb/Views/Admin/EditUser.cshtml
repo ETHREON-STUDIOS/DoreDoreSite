@@ -1,0 +1,171 @@
+﻿@model DoreDoreWeb.Models.User
+
+@{
+    ViewData["Title"] = "Kullanıcı Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["ShowNavbar"] = false;
+}
+
+<h2>Kullanıcıyı Düzenle</h2>
+
+<form id="editUserForm" asp-action="EditUser" method="post">
+    <input type="hidden" asp-for="Id" id="userId" />
+
+    <div class="form-group" id="userNameGroup">
+        <label for="userName">Kullanıcı Adı</label>
+        <input asp-for="UserName" class="form-control" id="userName" />
+    </div>
+
+    <div class="form-group" id="userEmailGroup">
+        <label for="userEmail">Email</label>
+        <input asp-for="UserEposta" class="form-control" id="userEmail" />
+    </div>
+
+    <div class="form-group" id="userPasswordGroup">
+        <label for="userPassword">Şifre</label>
+        <input asp-for="UserPassword" type="password" class="form-control" id="userPassword" />
+    </div>
+
+    <div class="form-group" id="userAdminGroup">
+        <label for="userAdmin">Admin mi?</label>
+        <select asp-for="UserLv" class="form-control" id="userAdmin">
+            <option value="true" selected="@(Model.UserLv == true)">Evet</option>
+            <option value="false" selected="@(Model.UserLv == false)">Hayır</option>
+        </select>
+    </div>
+
+    <div class="form-group" id="birthDateGroup">
+        <label for="birthDate">Doğum Tarihi</label>
+        <input asp-for="BirthDate" type="date" class="form-control" id="birthDate" />
+    </div>
+
+    <div class="form-group" id="genderGroup">
+        <label for="gender">Cinsiyet</label>
+        <select asp-for="Gender" class="form-control" id="gender">
+            <option value="true" selected="@(Model.Gender == true)">Erkek</option>
+            <option value="false" selected="@(Model.Gender == false)">Kadın</option>
+        </select>
+    </div>
+
+    <div class="form-group" id="profilePictureGroup">
+        <label for="profilePicture">Profil Fotoğrafı (URL)</label>
+        <input asp-for="ProfilePicture" class="form-control" id="profilePicture" />
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3" id="submitBtn">Kaydet</button>
+    <a class="btn btn-secondary mt-3" href="@Url.Action("Users", "Admin")" id="cancelBtn">İptal</a>
+</form>
+
+<style>
+    /* Genel Stil Ayarları */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Başlık */
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Form Stili */
+    #editUserForm {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Form Grup */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Form Etiketleri */
+    label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Form Girdi Alanları */
+    #userName, #userEmail, #userPassword, #birthDate, #profilePicture, #gender {
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    /* Girdi Alanları Focus */
+    #userName:focus, #userEmail:focus, #userPassword:focus, #birthDate:focus, #profilePicture:focus, #gender:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Butonlar */
+    button#submitBtn {
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    button#submitBtn.btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+
+    button#submitBtn.btn-success:hover {
+        background-color: #218838;
+    }
+
+    /* İptal Butonu */
+    a#cancelBtn {
+        background-color: #6c757d;
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    a#cancelBtn:hover {
+        background-color: #5a6268;
+    }
+
+    /* Sayfa Ortasında Konumlandırma */
+    form {
+        margin: 0 auto;
+    }
+
+    /* Responsive Düzenlemeler */
+    @@media (max-width: 576px) {
+        #editUserForm {
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+    }
+</style>

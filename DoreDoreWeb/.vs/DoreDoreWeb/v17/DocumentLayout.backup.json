@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\user\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\user\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\user\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\admin\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|c:\\users\\muhmm\\onedrive\\belgeler\\github\\doredoresite\\doredoreweb\\doredoreweb\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A6292FD7-190D-4EDD-85EA-470A99BABBD2}|DoreDoreWeb\\DoreDoreWeb.csproj|solutionrelative:doredoreweb\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,54 +42,97 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\User\\Profile.cshtml",
-              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\User\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\User\\Profile.cshtml",
-              "RelativeToolTip": "DoreDoreWeb\\Views\\User\\Profile.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-27T11:33:28.758Z",
+              "DocumentIndex": 4,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "DoreDoreWeb\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T22:56:10.903Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "DoreDoreWeb\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-27T11:32:24.778Z",
+              "WhenOpened": "2025-04-27T13:01:42.503Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "DoreDoreWeb\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\UserController.cs",
-              "RelativeToolTip": "DoreDoreWeb\\Controllers\\UserController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwEQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T10:57:07.771Z",
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "DoreDoreWeb\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T13:43:58.21Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DoreDoreWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T14:58:37.695Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Admin\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Admin\\EditUser.cshtml",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Admin\\EditUser.cshtml",
+              "RelativeToolTip": "DoreDoreWeb\\Views\\Admin\\EditUser.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAKsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T13:27:46.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Admin\\Users.cshtml",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\Admin\\Users.cshtml",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\Admin\\Users.cshtml",
+              "RelativeToolTip": "DoreDoreWeb\\Views\\Admin\\Users.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T13:26:34.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EditProfile.cshtml",
-              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\User\\EditProfile.cshtml",
-              "RelativeDocumentMoniker": "DoreDoreWeb\\Views\\User\\EditProfile.cshtml",
-              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Views\\User\\EditProfile.cshtml",
-              "RelativeToolTip": "DoreDoreWeb\\Views\\User\\EditProfile.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-27T10:29:52.218Z",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "DoreDoreWeb\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "DoreDoreWeb\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T13:22:44.632Z",
               "EditorCaption": ""
             },
             {
@@ -115,19 +166,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "DoreDoreWeb\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Muhmm\\OneDrive\\Belgeler\\GitHub\\DoreDoreSite\\DoreDoreWeb\\DoreDoreWeb\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "DoreDoreWeb\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwEEAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:56:10.903Z",
-              "EditorCaption": ""
             }
           ]
         },

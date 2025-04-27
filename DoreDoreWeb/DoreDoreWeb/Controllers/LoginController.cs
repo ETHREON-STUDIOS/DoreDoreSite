@@ -57,6 +57,8 @@ namespace DoreDoreWeb.Controllers
                 HttpContext.Session.SetString("UserName", user.UserName ?? string.Empty);
                 HttpContext.Session.SetString("ProfilePicture", user.ProfilePicture ?? string.Empty);
                 HttpContext.Session.SetInt32("UserId", user.Id);
+                HttpContext.Session.SetString("UserLv", user.UserLv.ToString() ?? string.Empty);
+
 
                 // Giriş başarılıysa ana sayfaya yönlendir
                 return RedirectToAction("Index", "Home"); // Ana sayfa veya istediğiniz sayfaya yönlendirin

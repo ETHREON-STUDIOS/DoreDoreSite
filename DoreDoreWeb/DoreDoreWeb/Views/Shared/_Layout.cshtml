@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -50,67 +51,79 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
-            <div class="container d-flex align-items-center">
+    @if (ViewData["ShowNavbar"] == null || (bool)ViewData["ShowNavbar"] == true)
+    {
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+                <div class="container d-flex align-items-center">
 
-                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index" style="height: 80px;">
-                    <img src="/Images/logo2.png" alt="DoreDore Logo" style="max-height: 100%; width: auto; object-fit: contain;" class="img-fluid" />
-                </a>
+                    <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index" style="height: 80px;">
+                        <img src="/Images/logo2.png" alt="DoreDore Logo" style="max-height: 100%; width: auto; object-fit: contain;" class="img-fluid" />
+                    </a>
 
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav me-3">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Anasayfa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Movies">Filmler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Series">Diziler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Categories">Kategoriler</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav me-3">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Movies">Filmler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Series">Diziler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Categories">Kategoriler</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Privacy">Gizlilik</a>
+                            </li>
+                        </ul>
 
-                    <div class="d-flex align-items-center">
-                        @if (Context.Session.GetString("UserName") != null)
-                        {
-                            <!-- Kullanıcı giriş yaptıysa -->
-                            <div class="dropdown">
-                                <a href="#" class="d-flex align-items-center text-light text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="@Context.Session.GetString("ProfilePicture")" alt="Profil" width="40" height="40" class="rounded-circle me-2">
-                                    <span>@Context.Session.GetString("UserName")</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="profileDropdown">
-                                    <li><a class="dropdown-item" href="/User/Profile">Profilim</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" asp-controller="Login" asp-action="Logout">Çıkış Yap</a></li>
-                                </ul>
-                            </div>
-                        }
-                        else
-                        {
-                            <!-- Kullanıcı giriş yapmadıysa -->
-                            <a class="btn btn-outline-light me-2" asp-controller="Login" asp-action="Login">Giriş Yap</a>
-                            <a class="btn btn-warning" asp-controller="Login" asp-action="SingUp">Kayıt Ol</a>
-                        }
+                        <div class="d-flex align-items-center">
+                            @if (Context.Session.GetString("UserName") != null)
+                            {
+                                <!-- Kullanıcı giriş yaptıysa -->
+                                <div class="dropdown">
+                                    <a href="#" class="d-flex align-items-center text-light text-decoration-none dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="@Context.Session.GetString("ProfilePicture")" alt="Profil" width="40" height="40" class="rounded-circle me-2">
+                                        <span>@Context.Session.GetString("UserName")</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end text-small" aria-labelledby="profileDropdown">
+                                        <li><a class="dropdown-item" href="/User/Profile">Profilim</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" asp-controller="Login" asp-action="Logout">Çıkış Yap</a></li>
 
+                                        @if (Context.Session.GetString("UserLv") == "True")
+                                        {
+                                            <li><a class="dropdown-item" href="/Admin/Users">Admin Paneli</a></li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Kullanıcı giriş yapmadıysa -->
+                                <a class="btn btn-outline-light me-2" asp-controller="Login" asp-action="Login">Giriş Yap</a>
+                                <a class="btn btn-warning" asp-controller="Login" asp-action="SingUp">Kayıt Ol</a>
+                            }
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
+
+    }
+    <!-- Header -->
+    <!-- Header -->
+    
+
 
     <!-- Main İçerik -->
     <main class="flex-grow-1">
